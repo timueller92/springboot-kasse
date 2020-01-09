@@ -4,7 +4,7 @@ public class Ventil {
     public int saeulennummer;
     public Kraftstoffart kraftstoffart;
 
-    Ventil(int saeulennummer, Kraftstoffart kraftstoffart) {
+    public Ventil(int saeulennummer, Kraftstoffart kraftstoffart) {
         this.saeulennummer = saeulennummer;
         this.kraftstoffart = kraftstoffart;
     }
