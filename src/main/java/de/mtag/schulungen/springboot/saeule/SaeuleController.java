@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/saeule")
-public class SauleController {
+public class SaeuleController {
 
     @PutMapping("/bezahlenAbgeschlossen")
     public ResponseEntity bezahlenAbgeschlossen(@RequestBody TankVorgang tankVorgang) {
