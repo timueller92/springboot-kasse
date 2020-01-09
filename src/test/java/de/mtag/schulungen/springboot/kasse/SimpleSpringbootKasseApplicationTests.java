@@ -1,4 +1,4 @@
-package de.mtag.schulungen.springboot.kasse.simplespringbootkasse;
+package de.mtag.schulungen.springboot.kasse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

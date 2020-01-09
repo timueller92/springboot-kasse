@@ -1,4 +1,4 @@
-package de.mtag.schulungen.springboot.kasse.simplespringbootkasse;
+package de.mtag.schulungen.springboot.kasse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

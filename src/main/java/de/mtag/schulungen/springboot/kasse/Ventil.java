@@ -1,4 +1,4 @@
-package de.mtag.schulungen.springboot.kasse.simplespringbootkasse;
+package de.mtag.schulungen.springboot.kasse;
 
 public class Ventil {
     int saeulennummer;

@@ -1,4 +1,4 @@
-package de.mtag.schulungen.springboot.kasse.simplespringbootkasse;
+package de.mtag.schulungen.springboot.kasse;
 
 import java.math.BigDecimal;
 import java.util.UUID;
