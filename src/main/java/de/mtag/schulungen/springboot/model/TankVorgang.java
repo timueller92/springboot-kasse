@@ -1,14 +1,14 @@
-package de.mtag.schulungen.springboot.kasse;
+package de.mtag.schulungen.springboot.model;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 public class TankVorgang {
-    UUID uuid;
-    int saeulennummer;
-    Kraftstoffart kraftstoffart;
-    BigDecimal preisProLiter;
-    BigDecimal gesamtmenge;
+    public UUID uuid;
+    public int saeulennummer;
+    public Kraftstoffart kraftstoffart;
+    public BigDecimal preisProLiter;
+    public BigDecimal gesamtmenge;
 
     public TankVorgang(int saeulennummer, Kraftstoffart kraftstoffart, BigDecimal preisProLiter, BigDecimal gesamtmenge) {
         this.uuid = UUID.randomUUID();

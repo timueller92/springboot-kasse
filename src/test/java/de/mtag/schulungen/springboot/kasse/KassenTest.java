@@ -1,6 +1,9 @@
 package de.mtag.schulungen.springboot.kasse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.mtag.schulungen.springboot.model.Kraftstoffart;
+import de.mtag.schulungen.springboot.model.TankVorgang;
+import de.mtag.schulungen.springboot.model.Ventil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
