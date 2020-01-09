@@ -18,6 +18,9 @@ public class TankVorgang {
         this.gesamtmenge = gesamtmenge;
     }
 
+    public TankVorgang() {
+    }
+
     public UUID getUuid() {
         return uuid;
     }

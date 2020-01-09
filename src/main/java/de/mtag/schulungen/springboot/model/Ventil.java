@@ -1,8 +1,11 @@
 package de.mtag.schulungen.springboot.model;
 
 public class Ventil {
-    public int saeulennummer;
-    public Kraftstoffart kraftstoffart;
+    private int saeulennummer;
+    private Kraftstoffart kraftstoffart;
+
+    public Ventil() {
+    }
 
     public Ventil(int saeulennummer, Kraftstoffart kraftstoffart) {
         this.saeulennummer = saeulennummer;

@@ -48,9 +48,9 @@ public class KassenTest {
                 .andReturn();
 
         TankVorgang tankVorgang = tankVorgangJson.parseObject(result.getResponse().getContentAsString());
-        assertEquals(tankVorgang.saeulennummer, ventil.saeulennummer);
-        assertEquals(tankVorgang.kraftstoffart, ventil.kraftstoffart);
-        //assertEquals(tankVorgang.preisProLiter, new BigDecimal("1.30"));
+        assertEquals(tankVorgang.saeulennummer, ventil.getSaeulennummer());
+        assertEquals(tankVorgang.kraftstoffart, ventil.getKraftstoffart());
+        assertEquals(tankVorgang.preisProLiter, new BigDecimal("1.30"));
         assertEquals(tankVorgang.gesamtmenge, BigDecimal.ZERO);
     }
 
@@ -62,6 +62,6 @@ public class KassenTest {
                 .perform(MockMvcRequestBuilders.put("/kasse/auftankenAbgeschlossen")
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(tankVorgangJson.write(tankVorgang).getJson()))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isOk());
     }
 }
