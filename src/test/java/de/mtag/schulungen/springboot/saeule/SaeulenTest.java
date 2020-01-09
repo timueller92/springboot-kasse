@@ -37,12 +37,10 @@ public class SaeulenTest {
         void testBezahlenAbgeschlossen() throws Exception {
                 TankVorgang tankVorgang = new TankVorgang(1, Kraftstoffart.DIESEL, new BigDecimal("1.30"), new BigDecimal("30.00"));
 
-                MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/bezahlenAbgeschlossen")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(tankvorgang.write(tankVorgang).getJson())
-                        .accept(MediaType.APPLICATION_JSON))
-                        .andExpect(status().isOk())
-                        .andReturn();
+                mockMvc.perform(MockMvcRequestBuilders.put("/saeule/bezahlenAbgeschlossen")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(tankvorgang.write(tankVorgang).getJson()))
+                        .andExpect(status().isNoContent());
         }
 
 }

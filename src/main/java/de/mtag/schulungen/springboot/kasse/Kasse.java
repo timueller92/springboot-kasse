@@ -1,6 +1,5 @@
 package de.mtag.schulungen.springboot.kasse;
 
-import de.mtag.schulungen.springboot.model.Kraftstoffart;
 import de.mtag.schulungen.springboot.model.TankVorgang;
 import de.mtag.schulungen.springboot.model.Ventil;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,7 @@ public class Kasse {
 
     @PostMapping("neuerVorgang")
     TankVorgang neuerVorgang(Ventil ventil){
-        return new TankVorgang(2, Kraftstoffart.DIESEL, new BigDecimal("1.30"), new BigDecimal("0"));
+        return new TankVorgang(ventil.getSaeulennummer(), ventil.getKraftstoffart(), new BigDecimal("1.30"), new BigDecimal("0"));
     }
 
     @PutMapping("auftankenAbgeschlossen")
