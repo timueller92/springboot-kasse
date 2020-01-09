@@ -1,8 +1,8 @@
 package de.mtag.schulungen.springboot.saeule;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.mtag.schulungen.springboot.model.Kraftstoffart;
 import de.mtag.schulungen.springboot.model.TankVorgang;
-import de.mtag.schulungen.springboot.model.Tankvorgang;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import java.util.UUID;
+import java.math.BigDecimal;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -35,9 +35,11 @@ public class SaeulenTest {
 
         @Test
         void testBezahlenAbgeschlossen() throws Exception {
+                TankVorgang tankVorgang = new TankVorgang(1, Kraftstoffart.DIESEL, new BigDecimal("1.30"), new BigDecimal("30.00"));
+
                 MvcResult result = mockMvc.perform(MockMvcRequestBuilders.post("/bezahlenAbgeschlossen")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(tankvorgang.write(new TankVorgang(UUID.randomUUID())).getJson())
+                        .content(tankvorgang.write(tankVorgang).getJson())
                         .accept(MediaType.APPLICATION_JSON))
                         .andExpect(status().isOk())
                         .andReturn();
